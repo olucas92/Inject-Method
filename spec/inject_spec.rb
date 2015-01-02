@@ -20,7 +20,8 @@ describe Array do
   end
 
   context 'with a symbol' do
-    it 'can add numbers together'
+
+    it 'can add numbers together' do
       expect([1, 2, 3, 4].inject(:+)).to eq(10)
       expect([1, 2, 3, 4].my_inject(:+)).to eq(10)
     end
@@ -37,6 +38,7 @@ describe Array do
   end
 
   context 'with an argument and block' do
+
     it 'can add numbers together' do
       expect([1, 2, 3, 4].inject(10){|memo, item| memo + item}).to eq(20)
       expect([1, 2, 3, 4].my_inject(10){|memo, item| memo + item}).to eq(20)
@@ -54,6 +56,7 @@ describe Array do
   end
 
   context 'with a symbol argument' do
+
     it 'can add with a starting point and a symbol' do
       expect([1,2,3,4].inject(10, :+)).to eq 20
       expect([1,2,3,4].my_inject(10, :+)).to eq 20
@@ -69,3 +72,4 @@ describe Array do
       expect([1, 2, 3, 4]).my_inject(10, :*).to eq 240
     end
   end
+end
